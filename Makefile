@@ -7,13 +7,16 @@ open_tableplus_mysql: ## table plus mysql
 	open "mysql://root:root@127.0.0.1:6661/?statusColor=007F3D&enviroment=local&name=&tLSMode=1&usePrivateKey=false&safeModeLevel=0&advancedSafeModeLevel=0"
 
 start_project: ## start project
-	mysql.server start && open http://127.0.0.1:8085 && ./rr serve
+	mysql.server start && open http://127.0.0.1:8585 && ./rr serve
+
+rr_serve: ## rr_serve
+	./rr serve
 
 crawl: ## crawl
-	/usr/local/Cellar/php/8.1.12/bin/php app.php crawl -vvv
+	/usr/local/Cellar/php/8.1.13/bin/php app.php crawl -vvv
 
 console: ## crawl
-	/usr/local/Cellar/php/8.1.12/bin/php app.php
+	/usr/local/Cellar/php/8.1.13/bin/php app.php
 
 docker_up: ## docker up
 	docker-compose up --force-recreate -d
